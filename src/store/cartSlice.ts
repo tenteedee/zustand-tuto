@@ -34,7 +34,7 @@ export const createCartSlice: StateCreator<
     set((state) => {
       const foundProduct = state.products.find((product) => product.id === id);
       if (foundProduct) {
-        foundProduct.quantity++;
+        foundProduct.quantity += 1;
       }
     }),
 
@@ -47,7 +47,7 @@ export const createCartSlice: StateCreator<
         if (state.products[foundIndex].quantity === 1) {
           state.products.splice(foundIndex, 1);
         } else {
-          state.products[foundIndex].quantity--;
+          state.products[foundIndex].quantity -= 1;
         }
       }
     }),
